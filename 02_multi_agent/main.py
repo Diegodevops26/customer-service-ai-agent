@@ -11,7 +11,7 @@ from google.adk.agents import Agent
 from google.genai import types
 from google.adk.runners import Runner
 from google.adk.sessions import Session, InMemorySessionService
-from agent import find_and_navigate_agent
+from agent import root_agent
 
 # --- A Helper Function to Run Our Agents ---
 async def run_agent_query(agent: Agent, query: str, session: Session, user_id: str, session_service: InMemorySessionService, is_router: bool = False):
@@ -60,11 +60,11 @@ async def run_sequential_workflow():
     query = "Find me the best sushi restaurant in Palo Alto, and then tell me how to get there from the downtown Caltrain station."
 
     print(f"\n{'='*60}\n🗣️  Processing Query: '{query}'\n{'='*60}")
-    print(f"🚀 Handing off the entire task to the '{find_and_navigate_agent.name}'...")
+    print(f"🚀 Handing off the entire task to the '{root_agent.name}'...")
 
     # 1. Create a single session for our sequential agent
     # The session will manage the state (like the 'destination' variable) across the sub-agent calls.
-    session = await session_service.create_session(app_name=find_and_navigate_agent.name, user_id=my_user_id)
+    session = await session_service.create_session(app_name=root_agent.name, user_id=my_user_id)
 
     # 2. Run the query
     # The SequentialAgent will automatically:
@@ -72,9 +72,9 @@ async def run_sequential_workflow():
     #   - Take its output and save it to the state as `state['destination']`.
     #   - Call transportation_agent, injecting the destination into its prompt.
     #   - Stream the final response from the transportation_agent.
-    await run_agent_query(find_and_navigate_agent, query, session, my_user_id, session_service)
+    await run_agent_query(root_agent, query, session, my_user_id, session_service)
 
-    print(f"\n--- ✅ '{find_and_navigate_agent.name}' Workflow Complete ---")
+    print(f"\n--- ✅ '{root_agent.name}' Workflow Complete ---")
 
 
 if __name__ == "__main__":

@@ -10,21 +10,18 @@ museum_agent = LlmAgent(
     name="museum_expert",
     model="gemini-2.5-flash",
     instruction="You are a generic museum expert. When asked, suggest ONE famous museum or cultural site in the requested city. Keep it brief.",
-    tools=[google_search]
 )
 
 restaurant_agent = LlmAgent(
     name="restaurant_expert",
     model="gemini-2.5-flash",
     instruction="You are a foodie. When asked, suggest ONE famous local restaurant or dish in the requested city. Keep it brief.",
-    tools=[google_search]
 )
 
 outdoor_agent = LlmAgent(
     name="outdoor_expert",
     model="gemini-2.5-flash",
     instruction="You are an adventure guide. When asked, suggest ONE outdoor activity or park in the requested city. Keep it brief.",
-    tools=[google_search]
 )
 
 print("✅ Specialist agents are ready to plan!")
@@ -65,15 +62,22 @@ def save_activity_type_callback(
 
     return tool_response
 
-master_planner = LlmAgent(
-    name="master_trip_planner",
-    model="gemini-2.5-flash",
-    # We inject the state directly into the instruction so the agent can "see" it.
-    instruction="""
+def get_planner_instruction(context: ToolContext) -> str:
+    """
+    Dynamic instruction that safely retrieves state, defaulting to 'None' if missing.
+    """
+    # context is likely a ReadonlyContext which wraps the actual context
+    # We need to access .state from it.
+    
+    last_activity = "None"
+    if context and hasattr(context, "state") and context.state:
+        last_activity = context.state.get("last_activity_type", "None")
+    
+    return f"""
         You are a Master Trip Planner dedicated to creating varied, balanced itineraries.
 
         ### CRITICAL STATE INFORMATION
-        The last activity type you planned was: {last_activity_type}
+        The last activity type you planned was: {last_activity}
         (If it says 'None', you are free to choose any activity).
 
         ### YOUR STRICT RULES
@@ -83,7 +87,14 @@ master_planner = LlmAgent(
            - If last_activity_type is 'FOOD' -> `restaurant_expert` is BANNED for this turn.
            - If last_activity_type is 'OUTDOOR' -> `outdoor_expert` is BANNED for this turn.
         3. If the user asks for something that fits a banned specialist (e.g., asking for a hike when OUTDOOR is banned), you MUST politely refuse and suggest a DIFFERENT available type of activity instead.
-    """,
+        4. **CRITICAL:** You must only transfer to ONE agent at a time. Do NOT attempt to call multiple tools or transfer to multiple agents in a single turn.
+    """
+
+
+root_agent = LlmAgent(
+    name="master_trip_planner",
+    model="gemini-2.5-flash",
+    instruction=get_planner_instruction,
     sub_agents=[museum_agent, restaurant_agent, outdoor_agent],
     after_tool_callback=save_activity_type_callback,
 )
