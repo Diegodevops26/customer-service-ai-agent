@@ -10,12 +10,16 @@ steps:
     args:
       - '-c'
       - |
-        echo "🛠️  Installing uv..."
+        echo "🛠️  Installing dependencies..." && \
         pip install uv && \
+        uv pip install --system . && \
+        
+        echo "📦 Installed Packages:" && \
+        uv pip freeze && \
         
         echo "🚀 Running Deployment & Evaluation Script..."
         # Pass the Staging Bucket env var specifically here
-        uv run tests/deploy_and_eval.py
+        python tests/deploy_and_eval.py
     env:
       - 'PROJECT_ID=$_PROJECT_ID'
       - 'LOCATION=$_REGION'

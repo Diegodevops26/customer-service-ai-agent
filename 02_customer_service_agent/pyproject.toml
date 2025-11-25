@@ -5,7 +5,7 @@ description = "Customer Service Agent component"
 requires-python = ">=3.10"
 dependencies = [
     "pandas",
-    "google-cloud-aiplatform[agent_engines,evaluation]",
+    "google-cloud-aiplatform[agent_engines,evaluation]>=1.69.0",
     "google-adk",
     "python-dotenv",
 ]
