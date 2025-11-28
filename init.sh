@@ -38,7 +38,7 @@ fi
 # If no valid existing project was found, start the interactive creation process
 if [ "$PROJECT_ID_SET" = false ]; then
     echo "--- Creating and Setting New Google Cloud Project ID ---"
-    CODELAB_PROJECT_PREFIX="customer_service_agent"
+    CODELAB_PROJECT_PREFIX="customerservice"
 
     # Dynamic Length Calculation
     PREFIX_LEN=${#CODELAB_PROJECT_PREFIX}
