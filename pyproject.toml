@@ -9,4 +9,6 @@ dependencies = [
     "google-cloud-aiplatform[agent_engines,evaluation]>=1.69.0",
     "google-adk",
     "python-dotenv",
+    "pytest",
+    "pytest-asyncio",
 ]
