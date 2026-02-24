@@ -1,0 +1,142 @@
+{
+  "eval_set_id": "evalset1",
+  "name": "evalset1",
+  "eval_cases": [
+    {
+      "eval_id": "eval1",
+      "conversation": [
+        {
+          "invocation_id": "e-aa2bedfb-3587-410e-922c-10198db83e97",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Hi, I'm customer CUST001. Can you check my orders? I need a refund for order ORD-102. It arrived damaged."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Here is your purchase history, CUST001:\n\n*   **Order ID: ORD-101**\n    *   Date: 2023-10-15\n    *   Items: Wireless Headphones\n    *   Status: delivered\n    *   Total: $120\n\n*   **Order ID: ORD-102**\n    *   Date: 2023-11-01\n    *   Items: USB-C Cable, Phone Case\n    *   Status: refunded (as we just processed!)\n    *   Total: $35\n\nIs there anything else I can assist you with today?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "customer_service_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Thank you for providing your Customer ID, CUST001! I'm sorry to hear that your order ORD-102 arrived damaged. I can certainly help you with that refund.\n\n",
+                      "thought_signature": "CsMVAY89a1_eyKVXnKveEojfi--jM6cwfP7JerMrKI5TGalwN5DlwiWEOvR0kSl7PB3I2uKGyAW-N0ns9tMK2go5_7GyrR7acBLMidMhsihAzsPcW_1BbcxyGlfVqJIAqb1T4oLy4VsSQAmrlNuTIXrM7xvfXAc3LlZ9IO0Hq_QxHY4xFvFbTsrkJoIqcW_RlQSiuxBajayBRnU1qE7ffkEherzgL7kD4HuG-fmCVUISVS_BZ0iVKB1aPkaO4d3fP3oPZA1OrLGEPkhhyZB3T06D9l-mJZ5TiSNf55RCqRZfTPeFFMV5CPlJD2Us2O6pSNqIJtLnL2L6-k2H53lvkkkTyIHsBRczyNhRAKX7bX8K219WO_2hMVGeD5ybjEo-6pal6lkxKNjFzREbmQRjgv0TyYHBs8xurpS_LSmDnYUps3zKahyojWCoKSj3O9cEnkQTXr1NUsf9FFrzB2GpXkD062r5a8ZELMrl9X_i80k3h6-sqjBdDIqY2KalIm-XvYKmTEqLqyduFVltHWgKkIcmI7T-LodXBTdTVbcmsrpYSJ9Lu3YUVNc2F3lNu51hqGqeqUt5ivLkgZPEDhynBMigh_PziPegFA9phAL9ADReHLI49kkAplSFGW4TxxYp35cm6iVUpu_W2PXUwoX7FUvgBzfTNj0dBr-hW0YMH-i0StfktZ7MyS_hfHIr5e1O-inNPw7ldBk71C-wBoHY0McN1HqZ9tE4RThL_DHfcKYcIwWwIGYsBaTbEHhbNIrMupGpWOjo5att6jnX4Xd-pmdUS7y0inzzYLMXB4eq5UsqIh7m0aMDrnA3LGJJmP2wCC2J6Xw5DEbMH5e1jeLvTRbLzJ1ePhJzAAoVBaQ15HpoiLFS1GZF2VJ3mGgRJLQLTnrIpDpPK61T-FuelSxquaEXgBEftEk0fcHqXsauX_iQTZjBHkyciUpOshAFkq-uzGIYe5d54QDQWFCTSKO3ORqXSpKgR-krzgmcJcCr0nXwpOMuGItigCt6Z9kMOkg4jqnU9hrtFi-rvSJADfHuWrZTC21-3ozAeOFxxhRji5sR-Pb7zongh9sxDTn_1puIFFsHkMN1176IvjNfHic2tsanmcUadTC11HDsUK1CuGfdhLulSGd8onZHH2dLVjL-G-9gfCGZePH62oQD216L210jIDas_EALw1sXwLNIQQqt_xJYg75hjZF5VCZlFW3-ICbUz6cwNAc9kdEU5f1wgsiL-yv_XEKvQy45g2A_FYARMWuIWBBztbUFtdX5cnzqaU8mnmxrbJroDMxCvapGfpn5uWyQxTDbbVNLT-xLAxmhHBthZEBRvmTUbEh274YqufFcxrBY6QO8TvKpT2nfus3P2xl9G6e8BFNeWa0aGF1wuljI0ulVbZCmHp9wYyc1cm5za56EGOaVZYsJitPhu5sMpvVVHnhl2YuYc3ZtoLuXJSN2PC2sPc6SLhiuQkeI3VvjcEf4aLEa7lEV_zLRvj1RWw3cDpoVtLzwuxmChE8ztEM_glRfntcu-OaNNU9-jHqT7jdYGpabbgkjJ941ut_ELjYiwUNx_Ii9nDJYFHJDgu0XOYPqDg1m1krEZnEcAEC9sLzvP__epwEfiFh_HO57Am_mGNOvgR5IXgdwpgmdlXNv7fhkmISxCNTnNTWt00pqeGY4_619v2uBoO46P1LndLhlBuFc1pYBvIrfadn0KNx7If0FdosY43JL5zUhGkdTeMbODNK7UqdcOAcNpYQswHsKa-dRZ95-XLItnEtXspcDVor3Ly1YkJvjyLz3L5zvwVCLv1e1uPqjuJ2Ju0g0JLwXBGQ6DepsAWVnk7-l-mqELFB9-uzswH4--etgi0qbFWV0O-E93Q844dXLrY5GKaVx0MUTOjNejvpQ14lGSVmBfJKu8JQWBSppDtrLx_ZuqNUdfg__JTqae0R-LdjYUi3nm0Vorpn6wvGu1BwoOOEpvA5_X5LyNNevsqilcEUnopU-nt7PGZ9w4DsSnJ1gfcCkIgas6OJsp7ZW3Tygox55ql0xEXgs9vVfxtZS75sebMlXX-GPgKpV3aMtMobtzVLagddYE0VQL26eafeL5K3JJHcZmeDigkTL8AMJVtLQhsRlN2Dvu4EMAIk372cK9oyJcNcIXC2GAm22gGtUb82yo2U4uhldlVAiV33ozgUCpfO1rzEiLht2lBkQL-3nQL8rOW4JHbdiUG6z361eHDKS5OxWptcJfTJkgiQNN6u5LS4r7dlZST6QuxvM1aZ69_lsiuqWcmNQK5e6RkCX7-sRNpTewVIGbBsqBEcBoXItTwR6GzlvG8UeIvchbDL6YZ-u5Nux4xFvZXET8euqDyEfrKeDAUfh873sFUDIy0f3fga5EpXMuQ2lrlXj2TafFzblFFIdw3A3wa0RWGINaAByqBdsJeFAqmTuMP-On6hTZk19KEQbIo7DF-qY59x4zgyP8rBh8lmFkSopNF1K8b3nztu3q18EwMF9S9Lh2o5L1mDX4VTXgRAPTXHdYvsEzvsfwzgVOPfd5XesE4Mq47ccg4-iN1NVxlcefOaCtYiBO51vD4LKNAMi2DUd3hZS6dTRmxAOuF1oKmmbJo55h2hBc25uJk9Qmu1jrUFmmvJsX5rErJFKNfnGXZISC7rD4t5P4KCjVfC21Px4UOb-y5b_EMaSd7-X0_dU54peU0HIYs7xJek4dkvMB6K6BPxFNI3tYIYWlkZaqYWD968mPoCDa_Q2hKctyVcboky5hYD7V9AzDGMJdTrbIkUIE508r-OG-0jxFauaysgCHPLmOgfmr6fSQsjvDmAr9iMRL9WZUSf-GJtEN2jpwqzhoZGlblqO7iuemCnD-_tgMSygrb54un_rF_5RMWpGao8VTnXttYMZ1AG7opAKQXOYW7cYcKPRWSnNl0DmzuMNPPOl1iVA8YIopnwclmwhwzB50sshYxzDJvUDZR7Ya5DYsxj2rsgT4vw4GZykVHVDJ_Lu3TKJMD40pAw8t33jrLmOnuDQIDj-g0hKCZ56yBvPX_OULMB-Y907GTpxSmY9wPneh7HfNgzNoycOQT2MZviSCKT6I9S7UH5OV9wCVzE7WxCsBAyDlMe00VyazJsYYnjcWSYAFYD1VOu0h4HK8HWOp2ZK-hlDL3EhdWvU_1l0WRmPUbqUdqD3WZWcYSDeQJ9zsaLcIs0GyXAJrU8MHXFSGpuDzwU1gTwk9DPJda3qfrfi4e3X8qGXMKX8VCf3KIbaDx4IUMPkBO5mR-4oVGBkC2LQI4zv_KtAruvBji0gCFoTVP9jRFFcR1lnXnShRYeo_IJmZbqluvL290kBMccsu-J8aUN-ayt5LYt6G188LNJIk425-_nXpUGr6eFJjiQ-Ot1Fm7YKcqQRqHEL7X_CbtAMhADK3Fy3lXMolF_DXXKt509hnXceldoMrcehPHd44IaZv5gWdNAfzmllfjDG_63gJ_-tCRsDrQMbYfgWcbawY73-CnXpN1dKarP05TkI_mJj-E_HCxmVjh5cjodGQGh-IoT673SoyO8pFEUyXzsOndtS4uTyu-lZ39n9WcJN0ZJeISOUGA_J9DPUFqVHr2na7jT0hlZG4celAASt9PcNVUaCehCwQCua8dRbqA2h2NRHIBgivkiGiV5FX6WUvqmCd7GojAILI_6_qUxuqGkvXTLXTg=="
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-9ff09bab-64b5-4934-a8d4-fcafa3e93981",
+                        "args": {
+                          "order_id": "ORD-102",
+                          "reason": "damaged"
+                        },
+                        "name": "issue_refund"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "customer_service_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-9ff09bab-64b5-4934-a8d4-fcafa3e93981",
+                        "name": "issue_refund",
+                        "response": {
+                          "status": "success",
+                          "order_id": "ORD-102",
+                          "new_status": "refunded",
+                          "refund_amount": "Full refund of $35.0 processed",
+                          "message": "Refund issued for order ORD-102 due to: damaged"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "customer_service_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "I've successfully processed a full refund of $35.0 for your order ORD-102 due to it being damaged. The status of this order has been updated to 'refunded'.\n\nNow, let me check your other orders for you!\n"
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-86038def-251f-4c97-8dfc-bbfae09c9117",
+                        "args": {
+                          "customer_id": "CUST001"
+                        },
+                        "name": "get_purchase_history"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "customer_service_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-86038def-251f-4c97-8dfc-bbfae09c9117",
+                        "name": "get_purchase_history",
+                        "response": {
+                          "orders": [
+                            {
+                              "order_id": "ORD-101",
+                              "date": "2023-10-15",
+                              "items": [
+                                "Wireless Headphones"
+                              ],
+                              "total": 120.0,
+                              "status": "delivered"
+                            },
+                            {
+                              "order_id": "ORD-102",
+                              "date": "2023-11-01",
+                              "items": [
+                                "USB-C Cable",
+                                "Phone Case"
+                              ],
+                              "total": 35.0,
+                              "status": "refunded"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1771355937.649965
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_service_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1771356824.218348
+    }
+  ],
+  "creation_timestamp": 1771356795.9362588   
+  
+}
